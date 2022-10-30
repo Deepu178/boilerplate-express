@@ -1,9 +1,11 @@
 
 let express = require('express');
+let bodyParer = require('body-parser');
 let app = express();
 
 
 const absolutePath = __dirname + '/public/style.css';
+app.use(bodyParer.urlencoded({extended:false}));
 
 //logger middleware
 app.use((req, res, next)=>{
