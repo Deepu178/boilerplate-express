@@ -46,7 +46,13 @@ app.get("/name", (req, res)=>{
       name:`${firstname} ${lastname}`
     })
   })
-
+ 
+  app.post("/name", (req, res)=>{
+    const {first:firstname, last:lastname} = req.body;
+    res.json({
+        name:`${firstname} ${lastname}`
+    })
+  })
   
   module.exports = app;
 
