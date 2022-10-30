@@ -31,6 +31,22 @@ app.get('/now', (req, res, next)=>{
     })
 })
 
+app.get('/:word/echo', (req, res)=>{
+    const {word} = req.params;
+    res.json({
+        echo:word
+    })
+})
+
+app.get("/name", (req, res)=>{
+    const {first:firstname, last:lastname} = req.query;
+    res.json({
+      name:`${firstname} ${lastname}`
+    })
+  })
+
+  
+  module.exports = app;
 
 
 
@@ -66,5 +82,3 @@ app.get('/now', (req, res, next)=>{
 
 
 
-
- module.exports = app;
